@@ -6,15 +6,17 @@ namespace ATipiNumConsole
     {
         static void Main(string[] args)
         {
-            float prezzoIntero = 100.0F;
-            float sconto = 0.1F;
-            float prezzoFinale = 0;
+            Console.WriteLine("inserisci il prezzo di cui calcolare lo sconto");
+            double prezzoIntero = Convert.ToDouble(Console.ReadLine());
+            int sconto = 10;
+            decimal prezzoFinale;
 
-            Console.WriteLine($"FLOAT Prezzo iniziale: {prezzoIntero} ");
+            Console.WriteLine($"Prezzo iniziale: {prezzoIntero} ");
             for (int i = 1; i < 10; i++)
             {
-                prezzoFinale = prezzoIntero * (1 - i * sconto);
-                Console.WriteLine($"sconto {i}0% ->Prezzo scontato {prezzoFinale} ");
+                prezzoFinale = Convert.ToDecimal(prezzoIntero - (prezzoIntero / 100 * sconto));
+                Console.WriteLine($"sconto {i}0% ->Prezzo scontato {prezzoFinale}");
+                sconto += 10;
             }
 
 
